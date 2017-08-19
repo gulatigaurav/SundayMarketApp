@@ -4,6 +4,9 @@
     <title>SundayMarket</title>
     <%= csrf_meta_tags %>
 
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -11,13 +14,21 @@
   <body>
 
 
-<div class="container">
-     <!-- navbar -->
-   <%= link_to  "Home", root_path %> | 
-   <%= link_to  "About", about_path %>
+ <!-- start of navbar -->
 
-    <%= yield %>
-  </div>
+ <%= render 'shared/app_navbar' %>
+
+
+ <!-- end of navbar -->
+
+        <div class="container">
+
+            <%= yield %>
+
+        </div>
+          <!-- start of footer -->
+           <%= render 'shared/app_footer' %>
+          <!-- end of footer -->
 
   </body>
 </html>

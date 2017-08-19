@@ -171,7 +171,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  bootstrap (~> 4.0.0.alpha6)
+  bootstrap (~> 4.0.0.beta)
   byebug
   coffee-rails (~> 4.2)
   devise (~> 4.3)

@@ -1,14 +1,19 @@
 <p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-1"></div>
 
-<p>
-  <strong>Summary:</strong>
-  <%= @product.summary %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
-
+<div class="col-md-6">
+<div class="card text-center" style="width: 50rem;">
+  <div class="card-body">
+    <h4 class="card-title">
+    <%= @product.summary %>
+    </h4>
+    <p class="card-text">
+      <%= @product.description %>
+    </p>
+  </div>
+</div>
+</div>
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
+</div>

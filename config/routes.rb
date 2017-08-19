@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :products
   devise_for :users
-  root 'page#home'
+  root to: 'page#home'
   get '/about',to: 'page#about'
 
 resources :categories, except: [:delete, :show]
