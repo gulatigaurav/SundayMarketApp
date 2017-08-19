@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
   # GET /products
   # GET /products.json
   def index
@@ -25,6 +26,7 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
+    @product.user = current_user
 
       if @product.save
         flash[:notice] = 'Product was successfully created.'
@@ -65,4 +67,14 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:summary, :description, category_ids: [])
     end
+    #
+    def require_same_user
+      if !logged_in?(:site_admin) and current_user != @product.user
+        flash[:notice] = "You can only edit or delete your own articles"
+        redirect_to root_path
+      end
+    end
+
+
+
 end
