@@ -17,7 +17,9 @@
 
        <%= link_to 'Show', product, class: "btn btn-sm btn-primary" %> |
        <%= link_to 'Edit', edit_product_path(product), class: "btn btn-sm btn-warning" %> |
+       <!-- <%= current_user.inspect %> -->
        <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" %>
+
  <br>
        <% if product.categories.count>0  %>
          <% product.categories.each do |cat| %>
