@@ -1,41 +1,44 @@
 <p id="notice"><%= notice %></p>
-
 <h1> All Products available this Market</h1>
 <br>
 <div class="row">
-   <div class="col-md-1"></div>
-      <div class="col-md-6">
-        <% @products.each do |product| %>
-           <div class="card text-center" style="width: 50rem;">
-             <div class="card-body">
-               <h4 class="card-title">
-                 <%= product.summary %>
-                </h4>
-                      <p class="card-text">
-                      <%= product.description %>
-                      </p>
+<% @products.each do |product| %>
+<div class="col-md-4">
+<div class="card" style="width: 20rem;">
+  <img class="card-img-top" src="http://via.placeholder.com/350x150" alt="Card image cap">
+  <div class="card-body">
+    <h4 class="card-title">
+      <%= product.summary %>
+    </h4>
+    <p class="card-text">
+      <%= product.description %>
+    </p>
 
-                    <% if current_user = product.user ||  logged_in?(:site_admin)%>
-                           <%= link_to 'Show', product, class: "btn btn-sm btn-primary" %>
-                           | <%= link_to 'Edit', edit_product_path(product), class: "btn btn-sm btn-warning" %>
-                            | <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" %>
-                    <% else %>
-                          <div class="row">
-                            <div class="col-md-4"></div>
-                              <div class="col-md-4">
-                                  <%= link_to 'Show', product, class: "btn btn-sm btn-primary btn-block" %>
-                              </div>
-                          </div>
-                   <% end %>
- <br>
-               <% if product.categories.count>0  %>
-                 <% product.categories.each do |cat| %>
-                   <span class="badge badge-primary badge-pill badge-cat"><%= cat.name %></span>
-                 <% end %>
-               <% end %>
 
-         </div>
-       </div>
-     <br>
- <% end %>
+    <% if current_user =   product.user ||  logged_in?(:site_admin)%>
+           <%= link_to 'Show', product, class: "btn btn-sm btn-primary" %>
+           | <%= link_to 'Edit', edit_product_path(product), class: "btn btn-sm btn-warning" %>
+            | <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" %>
+    <% else %>
+          <div class="row">
+            <div class="col-md-4"></div>
+              <div class="col-md-4">
+                  <%= link_to 'Show', product, class: "btn btn-sm btn-primary btn-block" %>
+              </div>
+          </div>
+    <% end %>
+
+<hr><% if product.categories.count>0  %>
+  <% product.categories.each do |cat| %>
+    <span class="badge badge-primary badge-pill badge-cat"><%= cat.name %></span>
+  <% end %>
+<% end %>
+
+
+
+  </div>
+</div>
+<br>
+</div>
+<% end %>
 </div>
