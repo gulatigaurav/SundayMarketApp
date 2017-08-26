@@ -1,3 +1,10 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$ ->
+  $('.btn-session').click ->
+    $('.insert').tidyTime() ->
+        time: Time.now
+        before:'It\'s'
+        after:' and I\'m feeling good!'
+        periodOfDay: true
+        callback: tidyTimeFunction
+    return
+  return

@@ -11,6 +11,11 @@
     <p class="card-text">
       <%= @product.description %>
     </p>
+
+<% if @product.user %>
+   Created by: <%= @product.user.email %>
+<% end %>
+
   </div>
 </div>
 </div>

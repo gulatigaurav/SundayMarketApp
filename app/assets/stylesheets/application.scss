@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "jquery-ui";
 
 .checkbox-inline{
   padding-right: 4px;
@@ -108,10 +109,13 @@ body {
 
 .increase-pa{
   padding-top: 125px;
-  padding-left: 25px;
+  padding-left: 45px;
 }
 .whole{
   background: #74ebd5; /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #74ebd5, #acb6e5); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #74ebd5, #acb6e5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
  }
+.insert{
+  padding-right: 4px;
+}
