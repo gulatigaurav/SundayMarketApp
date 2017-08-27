@@ -1,9 +1,21 @@
-<ul>
-<% @categories.each do |category_item| %>
+<br><br>
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Id</th>
+      <th>All Categories</th>
+      <th>View</th>
+    </tr>
+  </thead>
+  <tbody>
+ <% @categories.each do |category_item| %>
 
-<li>
-  <%= category_item.name %>
-</li>
+  <tr>
+    <th scope="row"><%=category_item.id%></th>
+    <td>  <%= category_item.name %></td>
+    <td> <%= link_to "All Products", "#" ,class: "btn btn-primary" %> </td>
+  </tr>
 
 <% end %>
-</ul>
+</tbody>
+</table>
