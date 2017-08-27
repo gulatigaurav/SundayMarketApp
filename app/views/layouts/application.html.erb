@@ -22,12 +22,14 @@
  <!-- end of navbar -->
 
         <div class="container">
-          <p id="notice"><%= notice %></p>
-          <p id="notice"><%= alert %></p>
+          <!-- <p id="notice"><%= notice %></p>
+          <p id="notice"><%= alert %></p> -->
 
             <%= yield %>
 
         </div>
+
+          <%= render 'shared/alerts' %>
           <!-- start of footer -->
            <%= render 'shared/app_footer' %>
           <!-- end of footer -->
