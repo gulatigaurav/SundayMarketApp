@@ -1,4 +1,4 @@
-class ProductsController < ApplicationController
+ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :require_same_user, only: [:edit, :update, :destroy]
@@ -51,11 +51,23 @@ class ProductsController < ApplicationController
 
   # DELETE /products/1
   # DELETE /products/1.json
-  def destroy
-    @product.destroy
-    flash[:notice] = 'Product was successfully deleted.'
-    redirect_to products_url
-    end
+
+    def destroy
+      @product.destroy
+
+        respond_to do |format|
+          format.html { redirect_to products_url, notice: 'Article was successfully deleted.' }
+          format.json { head :no_content }
+          format.js   { render :layout => false }
+        end
+      end
+
+
+
+
+
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
