@@ -123,6 +123,9 @@ body {
 .navbar-brand{
   font-weight: bold;
 }
+.nav-link{
+  color: rgba(255, 255, 255, 0.5);
+}
 
 .badge-cat{
   float: right;
@@ -170,4 +173,8 @@ padding-left: 35px
 
 .random{
   display: none;
+}
+
+.push-right{
+  float: right;
 }
