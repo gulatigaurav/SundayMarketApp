@@ -1,26 +1,46 @@
 <div class="container">
 <br>
 <div class="row">
-  <div class="col-md-1"></div>
+
+  <div class="col-md-6">
+  <img class="card-img-top" src="<%= @product.main_image %>" alt="Card image cap">
+  </div>
+
 
 <div class="col-md-6">
-<div class="card text-center" style="width: 50rem;">
-  <div class="card-body">
-    <h4 class="card-title">
-    <%= @product.summary %>
-    </h4>
-    <p class="card-text">
-      <%= @product.description %>
+
+<h2>Summary</h2>
+<p>
+
+  <%= @product.summary %>
+
+</p>
+
+<h2>Description</h2>
+    <p>
+        <%= @product.description %>
     </p>
 
+
 <% if @product.user %>
-   Created by: <%= @product.user.email %>
+ <blockquote>
+  <button type="button" class="btn btn-dark btn-usr">Check the User</button>
+  </blockquote>
 <% end %>
 
-  </div>
+ <span class="random">
+   <% if @product.user.name? %>
+      <%= link_to @product.user.name, user_path(@product.user), class: "btn btn-light" %>
+   <% else %>
+      <%= link_to @product.user.email, user_path(@product.user), class: "btn btn-light" %>
+   <% end %>
+ </span>
+
+<% if @product.user == current_user %>
+ <%= link_to 'Edit', edit_product_path(@product) %> |
+ <%= link_to 'Back', products_path %>
+<% end %>
 </div>
-</div>
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+
 </div>
 </div>

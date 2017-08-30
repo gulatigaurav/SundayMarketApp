@@ -1,16 +1,17 @@
 <div class="container">
-    
-    
+
+
 
 <!-- <p id="notice"><%= notice %></p> -->
-<h1> All Products available this Market</h1>
+<br>
+<h1 class="text-center"> All Products available this Market</h1>
 <br>
 
 <div class="row">
 <% @products.each do |product| %>
 <div class="col-md-4">
-<div class="card prod-<%=product.id%>" style="width: 20rem;">
-  <img class="card-img-top" src="http://via.placeholder.com/200x100" alt="Card image cap">
+<div class="card prod-<%=product.id%>" style="width: 19rem;">
+  <img class="card-img-top" src="<%= product.thumb_image %>" alt="Card image cap">
   <div class="card-body">
     <h4 class="card-title">
       <%= product.summary %>
