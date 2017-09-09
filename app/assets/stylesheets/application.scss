@@ -1,7 +1,7 @@
 @import "bootstrap";
 @import "jquery-ui";
 @import "gritter";
-
+@import "font-awesome";
 
 .container {
   max-width: 60rem;
@@ -21,7 +21,7 @@ h5, .h5,
 h6, .h6 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
-  color: #333;
+  color: #fff;
 }
 
 .checkbox-inline{
@@ -116,7 +116,7 @@ body {
 
 @media (min-width: 62em) {
   .featurette-heading {
-    margin-top: 7rem;
+    margin-top: 0rem;
   }
 }
 
@@ -177,4 +177,8 @@ padding-left: 35px
 
 .push-right{
   float: right;
+}
+.rounded {
+  border-radius: 10px;
+  background: #000; // without a background or border applied you won't be able to see if its rounded
 }
