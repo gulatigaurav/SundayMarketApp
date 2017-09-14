@@ -37,6 +37,7 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'sqlite3', '~> 1.3', '>= 1.3.13'
 end
 
 group :development do
@@ -44,11 +45,8 @@ group :development do
   gem 'web-console', '>= 3.3.0'
 end
 
-group :dvelopment do
-  gem 'sqlite3', '~> 1.3', '>= 1.3.13'
-end
 group :production do
-  gem 'pg'
+   gem 'pg'
    gem 'rails_12factor'
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
