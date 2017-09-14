@@ -1,0 +1,29 @@
+<div class="container">
+
+<br><br>
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email Id</th>
+      <th>#</th>
+    </tr>
+  </thead>
+  <tbody>
+ <% @users.each do |user| %>
+
+  <tr>
+    <th scope="row"><%=user.id%></th>
+    <% if user.name? %>
+    <td> <%= user.name %> </td>
+    <% else %>
+    <td> Guest Seller </td>
+    <% end %>
+    <td>  <%= user.email %></td>
+    <td> <%= link_to "All Products", "#" ,class: "btn btn-primary" %> </td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+</div>
