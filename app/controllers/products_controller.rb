@@ -56,7 +56,7 @@
       @product.destroy
 
         respond_to do |format|
-          format.html { redirect_to products_url, notice: 'Article was successfully deleted.' }
+          format.html { redirect_to products_url, notice: 'Product was successfully deleted.' }
           format.json { head :no_content }
           format.js   { render :layout => false }
         end
@@ -82,7 +82,7 @@
     #
     def require_same_user
       if !logged_in?(:site_admin) and current_user != @product.user
-        flash[:notice] = "You can only edit or delete your own articles"
+        flash[:notice] = "You can only edit or delete your own products"
         redirect_to root_path
       end
     end
