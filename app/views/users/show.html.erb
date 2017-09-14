@@ -27,12 +27,9 @@
     <br>
 
 
-<% if @user.products.count > 0 %>
-    <% @user.products.each do |prod| %>
-              <%= prod %>
+    <% @user.products.each do |product| %>
+              <%= product %>
         <% end %>
-<% end %>
-
 
 
 
