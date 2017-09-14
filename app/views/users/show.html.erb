@@ -1,5 +1,45 @@
 <div class="container">
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
-<%= @user.email %>
+
+<div class="row">
+  <div class="col-md-5">
+
+  </div>
+ <div class="col-md-4">
+
+
+   <h1 class="black-heading">
+<br>
+<i class="fa fa-user-circle text-center fa-random fa-1x" aria-hidden="true" ></i>
+<br>
+       <%= @user.name %>
+   </h1>
+ </div>
+
+<div class="col-md-3">
+</div>
+</div>
+
+  <h2 class="black-heading">  <%= @user.email %>
+ </h2>
+
+ <h2 class="black-heading">  <%= link_to @user.link %>  </h2>
+
+    <br>
+
+
+<% if @user.products.count > 0 %>
+    <% @user.products.each do |prod| %>
+         <div class="well">
+              <%= prod %>
+         </div>
+
+        <% end %>
+<% end %>
+
+
+
+
+
+
+
 </div>

@@ -7,7 +7,8 @@
       <th>Id</th>
       <th>Name</th>
       <th>Email Id</th>
-      <th>#</th>
+      <th>URL</th>
+      <th>Offerings</th>
     </tr>
   </thead>
   <tbody>
@@ -16,12 +17,14 @@
   <tr>
     <th scope="row"><%=user.id%></th>
     <% if user.name? %>
-    <td> <%= user.name %> </td>
+    <td> <%= link_to user.name, user_path(user) %> </td>
     <% else %>
     <td> Guest Seller </td>
     <% end %>
-    <td>  <%= user.email %></td>
-    <td> <%= link_to "All Products", "#" ,class: "btn btn-primary" %> </td>
+    <td>  <%= link_to user.email, user_path(user) %></td>
+    <td> <%= link_to user.link, user.link if user.link? %></td>
+    <!-- <td> <%= link_to "All Products", "#" ,class: "btn btn-primary" %> </td> -->
+    <td> <%= pluralize(user.products.count, 'product') %> </td>
   </tr>
 <% end %>
 </tbody>
