@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'users/show'
 
   resources :products
-  devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy' end
+  devise_for :users
   root to: 'page#home'
   get '/about',to: 'page#about'
 resources :categories, except: [:delete, :show]
